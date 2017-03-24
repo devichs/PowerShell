@@ -1,6 +1,6 @@
-﻿$Header = @"
+$Header = @"
 <style>
-able.centered{
+table.centered{
 	margin-left: auto;
 	margin-right: auto;
 	width: 1200px;
@@ -38,5 +38,5 @@ tr:hover {
 "@
 get-eventlog -LogName "System" | 
 Sort -Descending | 
-Select -Property EventID,MachineName,Category,EntryType,Message,TimeGenerated -First 10|
+Select -Property EventID,MachineName,Category,EntryType,Message,TimeGenerated -First 10 |
 ConvertTo-Html -Head $Header > ".\pslog.htm"
